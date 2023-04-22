@@ -39,7 +39,7 @@ task.spawn(function() --aimbot function
                 end
             end
         end
-        return mas_cercano --this returns to the nearest player
+        return mas_cercano --this returns to the nearest player to the cursor
     end
 
     runService.RenderStepped:Connect(function()
