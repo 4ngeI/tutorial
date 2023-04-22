@@ -2,7 +2,7 @@
 THIS WILL NOT WORK IN KRNL, IF YOU USE KRNL DON'T USE KRNL INSTEAD USE FLUXUS, KRNL'S FUNCTIONS ARE SHIT
 ]]
 
-local plrs = game:GetService("Players")
+local plrs = game:GetService("Players") 
 local plr = plrs.LocalPlayer
 local uis = game:GetService("UserInputService")
 local camara = game:GetService("Workspace").CurrentCamera
@@ -21,8 +21,6 @@ fov.Visible = true
 fov.Thickness = .1
 
 task.spawn(function() --aimbot function
-
-    
     local function masccercano()
         local mas_cercano = nil
         local numeroIMportante = math.huge
