@@ -32,7 +32,7 @@ task.spawn(function() --aimbot function
                         local wp = v.Character.Head.Position --this gets the position of each head
                         local amogus,enpantalla = camara:WorldToScreenPoint(wp) --convert vector3 of the head to vector2, since the cursor is vector2 and for obvious reasons you can't move the cursor to vector3
                         local XDXD = (Vector2.new(mouse.X,mouse.Y)- Vector2.new(amogus.X,amogus.Y)).Magnitude --this calculates the distance of the cursor and wp
-                        if numeroIMportante>XDXD and XDXD < fov.Radius and enpantalla then
+                        if numeroIMportante>XDXD and XDXD < fov.Radius and enpantalla then --enpantalla basically is onscreen
                             mas_cercano = v
                             numeroIMportante = XDXD
                         end
