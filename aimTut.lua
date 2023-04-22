@@ -29,8 +29,8 @@ task.spawn(function() --aimbot function
             if v.Name ~= plr.Name then --check if it is not your player
                 if v.Character then --this is to prevent error
                     if v.Character:FindFirstChild("Head") then --this prevents errors
-                        local wp = v.Character.Head.Position
-                        local amogus,enpantalla = camara:WorldToScreenPoint(wp) --convert vector3 to vector2, since the cursor is vector2 and for obvious reasons you can't move the cursor to vector3
+                        local wp = v.Character.Head.Position --this gets the position of each head
+                        local amogus,enpantalla = camara:WorldToScreenPoint(wp) --convert vector3 of the head to vector2, since the cursor is vector2 and for obvious reasons you can't move the cursor to vector3
                         local XDXD = (Vector2.new(mouse.X,mouse.Y)- Vector2.new(amogus.X,amogus.Y)).Magnitude --this calculates the distance of the cursor and wp
                         if numeroIMportante>XDXD and XDXD < fov.Radius and enpantalla then
                             mas_cercano = v
