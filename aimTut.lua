@@ -1,3 +1,7 @@
+--[[
+THIS WILL NOT WORK IN KRNL, IF YOU USE KRNL DON'T USE KRNL INSTEAD USE FLUXUS, KRNL'S FUNCTIONS ARE SHIT
+]]
+
 local plrs = game:GetService("Players")
 local plr = plrs.LocalPlayer
 local uis = game:GetService("UserInputService")
@@ -10,7 +14,7 @@ local aimbotsettings = {
     smoothness = 1
 }
 
-local fov = Drawing.new("Circle")
+local fov = Drawing.new("Circle") --from syn drawing lib, works on most exploits
 fov.Filled = false
 fov.Radius = 120
 fov.Visible = true
