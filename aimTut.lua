@@ -1,5 +1,6 @@
 --[[
-THIS WILL NOT WORK IN KRNL, IF YOU USE KRNL DON'T USE KRNL INSTEAD USE FLUXUS, KRNL FUNCTIONS ARE SHIT
+THIS WILL NOT WORK IN KRNL, IF YOU USE KRNL DON'T USE KRNL INSTEAD USE FLUXUS, KRNL FUNCTIONS ARE SHIT +
+they banned me for asking why mousemoverel function doesn't work in krnl)
 ]]
 
 local plrs = game:GetService("Players") 
