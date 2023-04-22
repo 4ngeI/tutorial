@@ -10,8 +10,8 @@ local mouse  = plr:GetMouse()
 local runService = game:GetService("RunService")
 local aimbotting = false
 local aimbotsettings = {
-    enabled = true,
-    smoothness = 1
+    enabled = true, --you can integrate this aimbot to a gui idk 
+    smoothness = 1 --you can integrate this aimbot to a gui idk x2 (linoria ui lib is the best)
 }
 
 local fov = Drawing.new("Circle") --from syn drawing lib, works on most exploits
@@ -52,7 +52,6 @@ task.spawn(function() --aimbot function
             end
         end
     end)
-
     uis.InputBegan:Connect(function(i)
         if i.UserInputType == Enum.UserInputType.MouseButton1 then -- change MouseButton1 to MouseButton2 if want 1st person
             aimbotting = true
