@@ -15,7 +15,7 @@ local aimbotsettings = {
     smoothness = 1 --you can integrate this aimbot to a gui idk x2 (linoria ui lib is the best)
 }
 
-local fov = Drawing.new("Circle") --from syn drawing lib, works on most exploits
+local fov = Drawing.new("Circle") --from syn drawing lib, works on most exploits (including jjsploit lmao)
 fov.Filled = false
 fov.Radius = 120
 fov.Visible = true
