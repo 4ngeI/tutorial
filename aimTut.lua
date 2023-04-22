@@ -45,9 +45,9 @@ task.spawn(function() --aimbot function
     runService.RenderStepped:Connect(function()
         if aimbotting then
             if masccercano() then --if not nil
-                local XDXD, onscreen = camara:WorldToScreenPoint(masccercano().Character.Head.Position)
-                local magnitudX = ((mouse.X - XDXD.X)/aimbotsettings.smoothness)
-                local magnitudy = ((mouse.Y - XDXD.Y)/aimbotsettings.smoothness)
+                local XDXD, onscreen = camara:WorldToScreenPoint(masccercano().Character.Head.Position) --convert vector3 to vector2, since the cursor is vector2 and for obvious reasons you can't move the cursor to vector3
+                local magnitudX = ((mouse.X - XDXD.X)/aimbotsettings.smoothness) --XDXD is a number
+                local magnitudy = ((mouse.Y - XDXD.Y)/aimbotsettings.smoothness) --the same as the other but in the y axis
                 mousemoverel(-magnitudX,-magnitudy) --works correctly in most exploits, except krnl (don't use krnl, they banned me for asking why this function doesn't work in krnl)
             end
         end
