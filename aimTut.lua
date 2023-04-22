@@ -59,7 +59,7 @@ task.spawn(function() --aimbot function
         end
     end)
     uis.InputEnded:Connect(function(i)
-        if i.UserInputType == Enum.UserInputType.MouseButton1 then
+        if i.UserInputType == Enum.UserInputType.MouseButton1 then -- change MouseButton1 to MouseButton2 if want 1st person
             aimbotting = false 
         end
     end)
