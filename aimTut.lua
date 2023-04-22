@@ -45,7 +45,7 @@ task.spawn(function() --aimbot function
     runService.RenderStepped:Connect(function()
         if aimbotting then
             if masccercano() then --if not nil
-                local XDXD, onscreen = camara:WorldToScreenPoint(masccercano().Character.Head.Position) --convert vector3 to vector2, since the cursor is vector2 and for obvious reasons you can't move the cursor to vector3
+                local XDXD, onscreen = camara:WorldToScreenPoint(masccercano().Character.Head.Position) --you can change head to HumanoidRootPart, for example; masccercano().Character.HumanoidRootPart.Position
                 local magnitudX = ((mouse.X - XDXD.X)/aimbotsettings.smoothness) --XDXD is a number
                 local magnitudy = ((mouse.Y - XDXD.Y)/aimbotsettings.smoothness) --the same as the other but in the y axis
                 mousemoverel(-magnitudX,-magnitudy) --works correctly in most exploits, except krnl (don't use krnl, they banned me for asking why this function doesn't work in krnl)
