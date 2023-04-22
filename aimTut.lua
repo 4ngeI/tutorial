@@ -43,7 +43,7 @@ task.spawn(function() --aimbot function
     end
 
     runService.RenderStepped:Connect(function()
-        if aimbotting then
+        if aimbotting and aimbotsettings.enabled then
             if masccercano() then --if not nil
                 local XDXD, onscreen = camara:WorldToScreenPoint(masccercano().Character.Head.Position) --you can change head to HumanoidRootPart, for example; masccercano().Character.HumanoidRootPart.Position
                 local magnitudX = ((mouse.X - XDXD.X)/aimbotsettings.smoothness) --XDXD is a number
