@@ -23,14 +23,14 @@ fov.Thickness = .1
 task.spawn(function() --aimbot function
     local function masccercano()
         local mas_cercano = nil
-        local numeroIMportante = math.huge
+        local numeroIMportante = math.huge --prevent cursor from bugging
         for i,v in pairs(plrs:GetPlayers()) do
-            if v.Name ~= plr.Name then
-                if v.Character then
-                    if v.Character:FindFirstChild("Head") then
+            if v.Name ~= plr.Name then --check if it is not your player
+                if v.Character then --this is to prevent error
+                    if v.Character:FindFirstChild("Head") then --this prevents errors
                         local wp = v.Character.Head.Position
-                        local amogus,enpantalla = camara:WorldToScreenPoint(wp)
-                        local XDXD = (Vector2.new(mouse.X,mouse.Y)- Vector2.new(amogus.X,amogus.Y)).Magnitude
+                        local amogus,enpantalla = camara:WorldToScreenPoint(wp) --convert vector3 to vector2, since the cursor is vector2 and for obvious reasons you can't move the cursor to vector3
+                        local XDXD = (Vector2.new(mouse.X,mouse.Y)- Vector2.new(amogus.X,amogus.Y)).Magnitude --this calculates the distance of the cursor and wp
                         if numeroIMportante>XDXD and XDXD < fov.Radius and enpantalla then
                             mas_cercano = v
                             numeroIMportante = XDXD
@@ -39,7 +39,7 @@ task.spawn(function() --aimbot function
                 end
             end
         end
-        return mas_cercano
+        return mas_cercano --this returns to the nearest player
     end
 
     runService.RenderStepped:Connect(function()
@@ -48,7 +48,7 @@ task.spawn(function() --aimbot function
                 local XDXD, onscreen = camara:WorldToScreenPoint(masccercano().Character.Head.Position)
                 local magnitudX = ((mouse.X - XDXD.X)/aimbotsettings.smoothness)
                 local magnitudy = ((mouse.Y - XDXD.Y)/aimbotsettings.smoothness)
-                mousemoverel(-magnitudX,-magnitudy)
+                mousemoverel(-magnitudX,-magnitudy) --works correctly in most exploits, except krnl (don't use krnl, they banned me for asking why this function doesn't work in krnl)
             end
         end
     end)
@@ -67,9 +67,9 @@ end)
 task.spawn(function() -- fov function
     local function getmousepos()
         local xd = uis:GetMouseLocation()
-        return Vector2.new(xd.X, xd.Y)
+        return Vector2.new(xd.X, xd.Y) 
     end
-    runService.RenderStepped:Connect(function()
-        fov.Position = getmousepos()
+    runService.RenderStepped:Connect(function() --updates the fov position for each frame, more frames = more smoothness
+        fov.Position = getmousepos() ----sometimes it breaks if you use getmouselocation() instead of vector2
     end)
 end)
